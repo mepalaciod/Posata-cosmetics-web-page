@@ -1,0 +1,60 @@
+/* ============================================
+   Badge / Chip — Posata Cosmetics
+   Para etiquetas de marca, categoría, estado
+   ============================================ */
+
+/* ── Badge base ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* ── Variantes ── */
+.badge--default {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+}
+
+.badge--primary {
+  background-color: rgba(212, 160, 160, 0.15);
+  color: var(--color-primary-dark);
+}
+
+.badge--accent {
+  background-color: rgba(201, 169, 110, 0.15);
+  color: var(--color-accent);
+}
+
+.badge--success {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--color-success);
+}
+
+.badge--error {
+  background-color: rgba(229, 57, 53, 0.1);
+  color: var(--color-error);
+}
+
+.badge--warning {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #F57F17;
+}
+
+/* ── Badge con borde ── */
+.badge--outlined {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
+/* ── Tamaño grande ── */
+.badge--lg {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-small);
+}

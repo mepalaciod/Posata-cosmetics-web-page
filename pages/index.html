@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Posata Cosmetics — Tienda en línea de cosméticos, productos para uñas y cabello. Marcas como ANI-K, Bloomshell, Milagros y más. Envíos a toda Colombia.">
+
+  <title>Posata Cosmetics — Belleza que inspira</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/button.css">
+  <link rel="stylesheet" href="../css/components/product-card.css">
+  <link rel="stylesheet" href="../css/components/badge.css">
+  <link rel="stylesheet" href="../css/pages/home.css">
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <!-- Skip Link (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <!-- ════════════════════════════════════════
+         NAVBAR
+         ════════════════════════════════════════ -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__container">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="Posata Cosmetics - Inicio">
+          <span class="navbar__logo-text">Posata</span>
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav class="navbar__nav" aria-label="Navegación principal">
+          <ul class="navbar__nav-list">
+            <li>
+              <a href="index.html" class="navbar__link navbar__link--active">Inicio</a>
+            </li>
+            <li class="navbar__dropdown">
+              <button class="navbar__link navbar__dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+                Marcas
+                <svg class="navbar__dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="navbar__dropdown-menu" role="menu">
+                <li><a href="catalog.html?marca=ani-k" class="navbar__dropdown-item" role="menuitem">ANI-K</a></li>
+                <li><a href="catalog.html?marca=bloomshell" class="navbar__dropdown-item" role="menuitem">Bloomshell</a></li>
+                <li><a href="catalog.html?marca=milagros" class="navbar__dropdown-item" role="menuitem">Milagros</a></li>
+                <li><a href="catalog.html?marca=lattin-nails" class="navbar__dropdown-item" role="menuitem">Lattin Nails</a></li>
+                <li><a href="catalog.html?marca=la-pocion" class="navbar__dropdown-item" role="menuitem">La Poción</a></li>
+                <li><a href="catalog.html?marca=ritual-botanico" class="navbar__dropdown-item" role="menuitem">Ritual Botánico</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="catalog.html" class="navbar__link">Productos</a>
+            </li>
+            <li>
+              <a href="about.html" class="navbar__link">Sobre Nosotros</a>
+            </li>
+            <li>
+              <a href="contact.html" class="navbar__link">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Acciones -->
+        <div class="navbar__actions">
+          <!-- Búsqueda -->
+          <button class="navbar__action-btn" aria-label="Buscar productos">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- Carrito -->
+          <a href="cart.html" class="navbar__action-btn" aria-label="Ver carrito de compras">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="navbar__cart-count">3</span>
+          </a>
+
+          <!-- Usuario -->
+          <button class="navbar__action-btn" aria-label="Iniciar sesión">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <!-- Hamburguesa (Mobile) -->
+          <button class="navbar__hamburger" id="hamburger-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menú Mobile (Drawer) -->
+      <div class="navbar__mobile-menu" id="mobile-menu" aria-hidden="true">
+        <nav aria-label="Navegación móvil">
+          <ul class="navbar__mobile-nav-list">
+            <li>
+              <a href="index.html" class="navbar__mobile-link">Inicio</a>
+            </li>
+            <li>
+              <button class="navbar__mobile-dropdown-btn" id="mobile-brands-btn" aria-expanded="false">
+                Marcas
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="navbar__mobile-dropdown-content" id="mobile-brands-dropdown">
+                <a href="catalog.html?marca=ani-k">ANI-K</a>
+                <a href="catalog.html?marca=bloomshell">Bloomshell</a>
+                <a href="catalog.html?marca=milagros">Milagros</a>
+                <a href="catalog.html?marca=lattin-nails">Lattin Nails</a>
+                <a href="catalog.html?marca=la-pocion">La Poción</a>
+                <a href="catalog.html?marca=ritual-botanico">Ritual Botánico</a>
+              </div>
+            </li>
+            <li>
+              <a href="catalog.html" class="navbar__mobile-link">Productos</a>
+            </li>
+            <li>
+              <a href="about.html" class="navbar__mobile-link">Sobre Nosotros</a>
+            </li>
+            <li>
+              <a href="contact.html" class="navbar__mobile-link">Contacto</a>
+            </li>
+            <li>
+              <a href="tracking.html" class="navbar__mobile-link">Seguimiento</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Overlay -->
+      <div class="navbar__overlay" id="navbar-overlay"></div>
+    </header>
+
+    <!-- ════════════════════════════════════════
+         MAIN CONTENT
+         ════════════════════════════════════════ -->
+    <main id="main-content">
+
+      <!-- ── Hero Section ── -->
+      <section class="hero" aria-label="Banner principal">
+        <!-- Fondo placeholder con gradiente (reemplazar con imagen real) -->
+        <div class="hero__overlay" style="background: linear-gradient(135deg, #1A1A1A 0%, #3a2a2a 50%, #D4A0A0 100%);"></div>
+        <div class="container hero__content">
+          <span class="hero__subtitle">Bienvenida a Posata</span>
+          <h1 class="hero__title">Belleza que inspira confianza</h1>
+          <p class="hero__description">
+            Descubre nuestra selección exclusiva de cosméticos, productos para uñas y cuidado capilar de las mejores marcas. Envíos a toda Colombia.
+          </p>
+          <div class="hero__actions">
+            <a href="catalog.html" class="btn btn--primary btn--lg">Ver catálogo</a>
+            <a href="about.html" class="btn btn--secondary btn--lg" style="border-color: #fff; color: #fff;">Conoce más</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Marcas Destacadas ── -->
+      <section class="section brands-section" aria-labelledby="brands-title">
+        <div class="container">
+          <h2 class="section__title" id="brands-title">Nuestras Marcas</h2>
+          <div class="brands-grid">
+
+            <a href="catalog.html?marca=ani-k" class="brand-card">
+              <div class="brand-card__logo" style="width:80px;height:80px;background-color:var(--color-bg-secondary);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);">A-K</div>
+              <span class="brand-card__name">ANI-K</span>
+              <span class="brand-card__category">Cosméticos</span>
+            </a>
+
+            <a href="catalog.html?marca=bloomshell" class="brand-card">
+              <div class="brand-card__logo" style="width:80px;height:80px;background-color:var(--color-bg-secondary);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);">BS</div>
+              <span class="brand-card__name">Bloomshell</span>
+              <span class="brand-card__category">Cosméticos</span>
+            </a>
+
+            <a href="catalog.html?marca=milagros" class="brand-card">
+              <div class="brand-card__logo" style="width:80px;height:80px;background-color:var(--color-bg-secondary);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);">MI</div>
+              <span class="brand-card__name">Milagros</span>
+              <span class="brand-card__category">Cuidado capilar</span>
+            </a>
+
+            <a href="catalog.html?marca=lattin-nails" class="brand-card">
+              <div class="brand-card__logo" style="width:80px;height:80px;background-color:var(--color-bg-secondary);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);">LN</div>
+              <span class="brand-card__name">Lattin Nails</span>
+              <span class="brand-card__category">Productos para uñas</span>
+            </a>
+
+            <a href="catalog.html?marca=la-pocion" class="brand-card">
+              <div class="brand-card__logo" style="width:80px;height:80px;background-color:var(--color-bg-secondary);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);">LP</div>
+              <span class="brand-card__name">La Poción</span>
+              <span class="brand-card__category">Tratamientos capilares</span>
+            </a>
+
+            <a href="catalog.html?marca=ritual-botanico" class="brand-card">
+              <div class="brand-card__logo" style="width:80px;height:80px;background-color:var(--color-bg-secondary);border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--color-primary-dark);">RB</div>
+              <span class="brand-card__name">Ritual Botánico</span>
+              <span class="brand-card__category">Tratamientos capilares</span>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Productos Recomendados ── -->
+      <section class="section recommended-section" aria-labelledby="recommended-title">
+        <div class="container">
+          <h2 class="section__title" id="recommended-title">Productos Recomendados</h2>
+          <div class="product-grid">
+
+            <!-- Producto 1 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #f5e6e6, #e8d0d0);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+                <span class="product-card__badge">
+                  <span class="badge badge--accent">Más vendido</span>
+                </span>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">ANI-K</span>
+                <h3 class="product-card__name">Base de maquillaje larga duración</h3>
+                <span class="product-card__price">$45.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 2 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #e6f0e6, #d0e0d0);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">Bloomshell</span>
+                <h3 class="product-card__name">Paleta de sombras Natural Glow</h3>
+                <span class="product-card__price">$68.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 3 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #f5e6f0, #e0d0e0);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+                <span class="product-card__badge">
+                  <span class="badge badge--primary">Nuevo</span>
+                </span>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">Lattin Nails</span>
+                <h3 class="product-card__name">Esmalte gel UV Rosa Intenso</h3>
+                <span class="product-card__price">$25.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 4 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #f0ece6, #e0dcd0);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">Milagros</span>
+                <h3 class="product-card__name">Tratamiento reparador capilar intensivo</h3>
+                <span class="product-card__price">$52.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 5 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #e6e8f5, #d0d2e8);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">La Poción</span>
+                <h3 class="product-card__name">Sérum capilar con aceite de argán</h3>
+                <span class="product-card__price">$38.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 6 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #f5f0e6, #e8e0d0);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+                <span class="product-card__badge">
+                  <span class="badge badge--accent">Más vendido</span>
+                </span>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">Ritual Botánico</span>
+                <h3 class="product-card__name">Mascarilla nutritiva de coco y keratin</h3>
+                <span class="product-card__price">$42.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 7 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #f2e6e6, #e5d0d0);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">ANI-K</span>
+                <h3 class="product-card__name">Labial mate colección Rose</h3>
+                <span class="product-card__price">$28.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 8 -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #e6f2f0, #d0e5e2);display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-size:var(--fs-small);">Imagen producto</div>
+                <span class="product-card__badge">
+                  <span class="badge badge--primary">Nuevo</span>
+                </span>
+              </div>
+              <div class="product-card__content">
+                <span class="product-card__brand">Lattin Nails</span>
+                <h3 class="product-card__name">Kit completo uñas acrílicas profesional</h3>
+                <span class="product-card__price">$120.000</span>
+                <div class="product-card__actions">
+                  <button class="btn btn--primary btn--sm">Agregar al carrito</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="text-center mt-xl">
+            <a href="catalog.html" class="btn btn--secondary btn--md">Ver todos los productos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Categorías ── -->
+      <section class="section categories-section" aria-labelledby="categories-title">
+        <div class="container">
+          <h2 class="section__title" id="categories-title">Explora por Categoría</h2>
+          <div class="categories-grid">
+
+            <a href="catalog.html?categoria=cosmeticos" class="category-card">
+              <div class="category-card__overlay" style="background: linear-gradient(to top, rgba(212,160,160,0.9) 0%, rgba(212,160,160,0.2) 100%); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+              <div class="category-card__content">
+                <h3 class="category-card__name">Cosméticos</h3>
+                <span class="category-card__count">Maquillaje, bases, labiales y más</span>
+              </div>
+            </a>
+
+            <a href="catalog.html?categoria=unas" class="category-card">
+              <div class="category-card__overlay" style="background: linear-gradient(to top, rgba(201,169,110,0.9) 0%, rgba(201,169,110,0.2) 100%); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+              <div class="category-card__content">
+                <h3 class="category-card__name">Uñas</h3>
+                <span class="category-card__count">Esmaltes, geles, acrílicos y herramientas</span>
+              </div>
+            </a>
+
+            <a href="catalog.html?categoria=cabello" class="category-card">
+              <div class="category-card__overlay" style="background: linear-gradient(to top, rgba(176,112,112,0.9) 0%, rgba(176,112,112,0.2) 100%); position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+              <div class="category-card__content">
+                <h3 class="category-card__name">Cabello</h3>
+                <span class="category-card__count">Tratamientos, mascarillas y sérums</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CTA Banner ── -->
+      <section class="cta-section" aria-label="Llamado a la acción">
+        <div class="container">
+          <h2 class="cta-section__title">¿Necesitas ayuda para elegir?</h2>
+          <p class="cta-section__description">
+            Contáctanos por WhatsApp y con gusto te asesoramos para encontrar los productos ideales para ti.
+          </p>
+          <a href="contact.html" class="btn btn--secondary btn--lg">Contáctanos</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+
+          <!-- Columna 1: Sobre Posata -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Posata Cosmetics</h3>
+            <p>Tu tienda de belleza de confianza. Cosméticos, productos para uñas y cuidado capilar de las mejores marcas, con envíos a toda Colombia.</p>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Instagram de Posata Cosmetics">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Facebook de Posata Cosmetics">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="WhatsApp de Posata Cosmetics">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Links Rápidos -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Enlaces</h3>
+            <div class="footer__links">
+              <a href="index.html">Inicio</a>
+              <a href="catalog.html">Catálogo</a>
+              <a href="about.html">Sobre Nosotros</a>
+              <a href="contact.html">Contacto</a>
+              <a href="tracking.html">Seguimiento de pedido</a>
+            </div>
+          </div>
+
+          <!-- Columna 3: Marcas -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Marcas</h3>
+            <div class="footer__links">
+              <a href="catalog.html?marca=ani-k">ANI-K</a>
+              <a href="catalog.html?marca=bloomshell">Bloomshell</a>
+              <a href="catalog.html?marca=milagros">Milagros</a>
+              <a href="catalog.html?marca=lattin-nails">Lattin Nails</a>
+              <a href="catalog.html?marca=la-pocion">La Poción</a>
+              <a href="catalog.html?marca=ritual-botanico">Ritual Botánico</a>
+            </div>
+          </div>
+
+          <!-- Columna 4: Contacto -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">Contacto</h3>
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>+57 300 000 0000</span>
+            </div>
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>info@posatacosmetics.com</span>
+            </div>
+            <div class="footer__contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Colombia</span>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="footer__divider">
+
+        <div class="footer__bottom">
+          <span class="footer__copyright">&copy; 2026 Posata Cosmetics. Todos los derechos reservados.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ════════════════════════════════════════
+       JAVASCRIPT
+       ════════════════════════════════════════ -->
+  <script>
+    // ── Menú hamburgesa mobile ──
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navbarOverlay = document.getElementById('navbar-overlay');
+
+    function toggleMobileMenu() {
+      const isOpen = mobileMenu.classList.contains('navbar__mobile-menu--open');
+
+      hamburgerBtn.classList.toggle('navbar__hamburger--active');
+      mobileMenu.classList.toggle('navbar__mobile-menu--open');
+      navbarOverlay.classList.toggle('navbar__overlay--visible');
+      mobileMenu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+
+      // Prevenir scroll del body cuando el menú está abierto
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    }
+
+    hamburgerBtn.addEventListener('click', toggleMobileMenu);
+    navbarOverlay.addEventListener('click', toggleMobileMenu);
+
+    // ── Dropdown de marcas en mobile ──
+    const mobileBrandsBtn = document.getElementById('mobile-brands-btn');
+    const mobileBrandsDropdown = document.getElementById('mobile-brands-dropdown');
+
+    mobileBrandsBtn.addEventListener('click', function() {
+      const isOpen = mobileBrandsDropdown.classList.contains('navbar__mobile-dropdown-content--open');
+      mobileBrandsDropdown.classList.toggle('navbar__mobile-dropdown-content--open');
+      this.classList.toggle('navbar__mobile-dropdown-btn--active');
+      this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+
+    // ── Navbar scroll shadow ──
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 10) {
+        navbar.classList.add('navbar--scrolled');
+      } else {
+        navbar.classList.remove('navbar--scrolled');
+      }
+    });
+
+    // ── Cerrar menú mobile con Escape ──
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('navbar__mobile-menu--open')) {
+        toggleMobileMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
