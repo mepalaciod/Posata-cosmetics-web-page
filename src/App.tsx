@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Navbar } from './components/Navbar';
+import { ProductoCard } from './components/ProductoCard'
+import { Header } from './components/Header';
+
+const productos = [{nombre: "App de cosméticos", descripción: "Catálogo de producto y compras", 
+  tecnologías: ["React", "TypeScript", "API" ]}];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Maria Palacio Duque</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Hola, soy María Palacio soy una profesional que quiere aprender a ser una desarrolladora web, me gusta mucho la tecnología y quiero aprender a programar para poder crear cosas increíbles.
-      </p>
-    </>
-  )
-}
+    <div>
+      <Navbar nombre="Posata" links={["Home", "Productos", "Contacto"]}/>
+  <main>
+  {productos.map((p) => (
+    <ProductoCard key={p.nombre} {...p} />
 
-export default App
+  ))}
+  </main>
+  </div>
+
+    );
+  }
+
+  export default App
