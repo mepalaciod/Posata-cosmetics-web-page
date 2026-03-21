@@ -1,0 +1,20 @@
+/* CustomButton.module.css */
+.btn {
+    padding: 10px 24px;
+border: none;
+border-radius: 8px;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+transition: transform 0.1s ease, box-shadow 0.2s ease;
+letter-spacing: 0.5px;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);}
+.btn:active { transform: scale(0.96);
+}
+
+.primary { background: #7C6AF7; color: #fff; }
+.secondary { background: #2A2D3E; color: #E8EAF0; border: 1px solid #7C6AF7;}
+.danger { background: #EF4444; color: #fff; }
+.pressed {opacity: 0.75;}

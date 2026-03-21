@@ -1,0 +1,18 @@
+/* ProductoCard.module.css */
+.card {
+    background: #1A1D27;
+    border: 1px solid #2a2d3E;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s, transform 0.2s;
+    width: 220px;
+}
+.card:hover { border-color: #7C6AF7; transform: translateY(-4px);}
+.emoji { font-size: 48px; text-align: center;}
+.name {font-size: 16px; font-weight: 700; color: #E8EAF0; }
+.category { font-size: 20px; font-weight: 800; color: #7C6AF7;}
+.price { font-size: 20px; font-weight: 800; color: #7C6AF7;}
+.addeed { border-color: #4ade80 !important;}
